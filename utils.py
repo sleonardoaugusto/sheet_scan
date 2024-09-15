@@ -14,9 +14,12 @@ def convert_currency(value):
     return float(value)
 
 
-def convert_date(value):
-    try:
-        return datetime.strptime(value, "%d/%m/%Y").date()
+def convert_date(date_str):
+    # Try to parse the date with different formats
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(date_str, fmt).date()
+        except ValueError:
+            continue
 
-    except ValueError:
-        raise ValueError(f"Error: The date: {value} is not a valid date.")
+    raise ValueError("Date format not recognized. Please use '%d/%m/%Y' or '%Y-%m-%d'.")
