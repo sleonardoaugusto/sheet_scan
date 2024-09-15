@@ -7,7 +7,7 @@ from openpyxl.workbook import Workbook
 from openpyxl.worksheet.table import Table
 
 from parser import ParserFactory, Row
-from utils import file_exists
+from utils import file_exists, sort_rows_by_date
 
 HEADERS = [
     "date",
@@ -85,7 +85,8 @@ def run(filename: str, template: str):
     with open(filename, newline="", encoding="utf-8") as csv_file:
         csv_reader = csv.reader(csv_file)
         content = read_sheet(csv_reader, template)
-        write_sheet(filename, content)
+        sorted_content = sort_rows_by_date(content)
+        write_sheet(filename, sorted_content)
 
 
 if __name__ == "__main__":

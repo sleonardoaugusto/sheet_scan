@@ -23,3 +23,8 @@ def convert_date(date_str):
             continue
 
     raise ValueError("Date format not recognized. Please use '%d/%m/%Y' or '%Y-%m-%d'.")
+
+
+def sort_rows_by_date(rows):
+    # Sort rows by the date field, assuming the date is in the format "%d/%m/%Y" or similar
+    return sorted(rows, key=lambda x: x.date)
