@@ -26,5 +26,4 @@ def convert_date(date_str):
 
 
 def sort_rows_by_date(rows):
-    # Sort rows by the date field, assuming the date is in the format "%d/%m/%Y" or similar
-    return sorted(rows, key=lambda x: x.date)
+    return sorted(rows, key=lambda x: x.date, reverse=True)

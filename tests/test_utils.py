@@ -58,6 +58,6 @@ def test_sort_rows_by_date():
     )
 
     unsorted_rows = [row1, row2, row3]
-    expected_sorted_rows = [row2, row1, row3]
+    expected_sorted_rows = [row3, row1, row2]
 
     assert sort_rows_by_date(unsorted_rows) == expected_sorted_rows
