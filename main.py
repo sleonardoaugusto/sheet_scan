@@ -16,7 +16,7 @@ HEADERS = [
     "conta",
     "category",
     "installment",
-]  # Mobills has an inconsistent localization config, requiring a mix of English and Portuguese in headers
+]  # Mobills has an inconsistent language config, requiring a mix of English and Portuguese in headers
 
 
 def read_sheet(sheet, template) -> List[Row]:

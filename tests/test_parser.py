@@ -88,6 +88,7 @@ class TestSantanderBankParser:
                 ],
                 ["", "", "", ""],
                 ["", "Resumo de despesas", "", ""],
+                ["", "Subtotal", "", ""],
             ]
         )
 
